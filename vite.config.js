@@ -7,10 +7,15 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
-  base: '/consultareinc-user-management/', // Add this line
+  base: '/UserManagement/', // Add this line
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })
+
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/UserManagement/' : '/'
+};
+
